@@ -19,6 +19,14 @@ ipcMain.on('store:delete', async (e, args) => {
   store.delete(args)
 })
 
+ipcMain.on('runEnv', (event, args) => {
+  console.log(args)
+  let nodeVer = process.versions["node"]
+  let chromeVer = process.versions["chrome"]
+  let electronVer = process.versions["electron"]
+  event.reply('runEnv-reply', { 'node': nodeVer, 'chrome': chromeVer, 'electron': electronVer })
+})
+
 dotenv.config({ path: join(__dirname, '../../.env') })
 
 let win = null
@@ -44,3 +52,24 @@ class createWin {
 }
 
 app.whenReady().then(() => new createWin())
+
+import fs from 'fs'
+
+ipcMain.on('list-media-files', (event, args) => {
+  console.log(args)
+  let files = [String]
+  let targetPath = args['targetPath']
+  console.log(targetPath)
+  // fs.readdir(targetPath, (err, files) => {
+  //   if (err) {
+  //     console.log('对不起，您没有加载您的home folder');
+  //   }
+  //   files.forEach((file: any) => {
+  //     console.log(`${targetPath}/${file}`);
+  //     files.push(`${targetPath}/${file}`);
+  //   });
+  // });
+  
+  // console.log(files)
+  // event.reply('list-media-files-reply',files )
+})

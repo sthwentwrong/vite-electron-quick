@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Index from './views/Index.vue'
 import Create from './views/Create.vue'
+import About from './views/About.vue'
 
 const router:any = createRouter({
   history: createWebHistory('/'),
@@ -19,6 +20,14 @@ const router:any = createRouter({
         component: Create as any,
         meta: {
             title: '创建'
+        }
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: About as any,
+        meta: {
+            title: '关于'
         }
     }
   ]
