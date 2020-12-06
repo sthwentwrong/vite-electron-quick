@@ -77,5 +77,9 @@ a {
   color: currentColor;
 }
 
-demo-shadow{height:100px;width:50%;border:1px solid #eee}
+demo-shadow{
+  height:100px;
+  width:50%;
+  border:1px solid #eee
+  }
 </style>

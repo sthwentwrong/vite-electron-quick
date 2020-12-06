@@ -96,4 +96,9 @@ export default {
 .el-aside {
   color: #333;
 }
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
 </style>
