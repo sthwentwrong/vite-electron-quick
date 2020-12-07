@@ -7,10 +7,10 @@
           <el-menu-item-group>
             <template #title>分组一</template>
             <el-menu-item index="1-1"
-              ><router-link to="/about">About</router-link></el-menu-item
+              ><router-link to="/about">关于myxy</router-link></el-menu-item
             >
             <el-menu-item index="1-2"
-              ><router-link to="/create">Create</router-link></el-menu-item
+              ><router-link to="/create">听音乐</router-link></el-menu-item
             >
           </el-menu-item-group>
           <el-menu-item-group title="分组2">
@@ -55,7 +55,7 @@
         </el-submenu>
       </el-menu>
     </el-aside>
-    <el-container style="height: 500px;">
+    <el-container style="height: 500px">
       <el-header style="text-align: right; font-size: 12px">
         <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px"></i>
@@ -67,9 +67,9 @@
             </el-dropdown-menu>
           </template>
         </el-dropdown>
-        <span>王小虎</span>
+        <span>舒舞影</span>
       </el-header>
-      <el-main >
+      <el-main>
         <router-view></router-view>
       </el-main>
       <el-footer>Footer</el-footer>
