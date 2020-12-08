@@ -73,3 +73,12 @@ ipcMain.on('list-media-files', (event, args) => {
   // console.log(files)
   // event.reply('list-media-files-reply',files )
 })
+
+ipcMain.on('readfile', (event, args) => {
+  console.log('read-audio-file' + args['targetPath'])
+  let buf = fs.readFileSync(args['targetPath']);
+  let uint8Buffer = Uint8Array.from(buf).buffer;
+  // let bolb = new Blob([uint8Buffer]);
+  //URL.createObjectURL(bolb)
+  event.reply('readfile-reply', {buffer:uint8Buffer})
+})
